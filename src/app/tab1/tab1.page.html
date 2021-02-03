@@ -14,6 +14,40 @@
   </ion-header>
 
   <ion-button (click)="speak()" expand="block" shape="round">
-    Speak to me
+    Ok Let's go
   </ion-button>
+  <ion-button (click)="shutUp()" expand="block" shape="round">
+    Shut up
+  </ion-button>
+  <ion-button (click)="clip()" expand="block" fill="clear" shape="round">
+    Clipboard
+  </ion-button>
+  <ion-item>
+    <ion-label>Vitesse</ion-label>
+    <ion-range [(ngModel)]="speed" min="0" max="1"  step="0.05" color="secondary">
+
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">1</ion-label>
+    </ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label>Langue</ion-label>
+    <ion-select [(ngModel)]="lang">
+        <ion-select-option value="fr-FR">French</ion-select-option>
+        <ion-select-option value="en-GB">English</ion-select-option>
+        <ion-select-option value="es-ES">Spanish</ion-select-option>
+        <ion-select-option value="pt-BR">Portuguese</ion-select-option>
+        <ion-select-option value="de-DE">German</ion-select-option>
+        <ion-select-option value="zn-CH">Chinese</ion-select-option>
+        <ion-select-option value="ru-RU">Russian</ion-select-option>
+        <ion-select-option value="ar-SZ">Arabic</ion-select-option>
+        <ion-select-option value="ja-JP">Japanese</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Message à lire</ion-label>
+    <ion-textarea [(ngModel)]="textToSpeak" rows="6" cols="20" placeholder="Text to speak"></ion-textarea>
+  </ion-item>
 </ion-content>
