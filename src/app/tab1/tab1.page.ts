@@ -1,3 +1,4 @@
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private tts: TextToSpeech) {}
 
+  speak(){
+
+  this.tts.speak('En catchana baby tu dead sa')
+  .then(() => console.log('Success'))
+  .catch((reason: any) => console.log(reason));
+    }
 }
